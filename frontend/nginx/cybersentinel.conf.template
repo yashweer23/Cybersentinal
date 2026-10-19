@@ -1,0 +1,73 @@
+worker_processes auto;
+pid /tmp/nginx.pid;
+# Request/response details are intentionally excluded from access logs.
+error_log /dev/stderr crit;
+events { worker_connections 1024; }
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    server_tokens off;
+    client_body_temp_path /tmp/client_body;
+    proxy_temp_path /tmp/proxy_temp;
+    fastcgi_temp_path /tmp/fastcgi_temp;
+    uwsgi_temp_path /tmp/uwsgi_temp;
+    scgi_temp_path /tmp/scgi_temp;
+    log_format operational escape=json '{"timestamp":"$time_iso8601","level":"INFO","logger":"nginx","method":"$request_method","status":$status,"request_id":"$request_id","duration_seconds":$request_time}';
+    access_log /dev/stdout operational;
+    keepalive_timeout 65;
+    send_timeout 120s;
+    resolver ${NGINX_RESOLVER} valid=10s ipv6=off;
+    server {
+        listen ${PORT};
+        server_name _;
+        root /usr/share/nginx/html;
+        index index.html;
+        # API-specific validation still enforces its configured (default 8 MiB) ingestion limit.
+        client_max_body_size 32m;
+        set $backend "${BACKEND_UPSTREAM}";
+        add_header X-Content-Type-Options nosniff always;
+        add_header Referrer-Policy no-referrer always;
+        add_header X-Frame-Options DENY always;
+        add_header Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'" always;
+        location = /healthz {
+            access_log off;
+            default_type application/json;
+            return 200 '{"status":"alive"}';
+        }
+        # Missing API routes must remain API 404s, never an HTML SPA fallback.
+        location ~ ^/(api(?:/|$)|docs(?:/|$)|redoc$|openapi\.json$) {
+            proxy_pass http://$backend$request_uri;
+            proxy_http_version 1.1;
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Request-ID $request_id;
+            proxy_set_header X-Forwarded-For $remote_addr;
+            proxy_set_header X-Forwarded-Proto ${PROXY_SCHEME};
+            proxy_set_header X-Forwarded-Host "";
+            proxy_set_header Forwarded "";
+            proxy_set_header Connection "";
+            proxy_connect_timeout 5s;
+            proxy_read_timeout 120s;
+            proxy_send_timeout 120s;
+            # A failed upstream mutation is never retried automatically.
+            proxy_next_upstream off;
+            proxy_redirect off;
+            proxy_hide_header X-Content-Type-Options;
+            proxy_hide_header X-Frame-Options;
+            proxy_hide_header Referrer-Policy;
+            # Swagger uses CDN/inline assets; SPA CSP is intentionally not applied to API docs.
+            add_header X-Content-Type-Options nosniff always;
+            add_header Referrer-Policy no-referrer always;
+            add_header X-Frame-Options DENY always;
+        }
+        location /assets/ {
+            try_files $uri =404;
+            expires 1y;
+        }
+        location = /index.html {
+            expires -1;
+        }
+        location / {
+            try_files $uri $uri/ /index.html;
+        }
+    }
+}

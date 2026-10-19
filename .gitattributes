@@ -1,0 +1,6 @@
+# Shell entrypoints must remain executable LF scripts on Windows checkouts.
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.template text eol=lf
+*.py text eol=lf
+*.ps1 text eol=crlf

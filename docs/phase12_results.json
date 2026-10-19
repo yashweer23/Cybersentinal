@@ -1,0 +1,326 @@
+{
+  "phase": 12,
+  "date": "2026-10-11",
+  "frontend": {
+    "passed": 48,
+    "test_files": 3,
+    "duration_seconds": 3.37,
+    "production_build": "passed",
+    "investigation_js_kb": 33.59,
+    "investigation_js_gzip_kb": 9.68,
+    "investigation_css_kb": 11.3,
+    "investigation_css_gzip_kb": 2.78,
+    "entry_js_kb": 374.26,
+    "entry_js_gzip_kb": 121.24
+  },
+  "backend": {
+    "passed": 654,
+    "skipped": 1,
+    "warnings": 1,
+    "duration_seconds": 41.24,
+    "database": "PGlite PostgreSQL 17.5 via socket adapter",
+    "skip_reason": "Native PostgreSQL required for independent writer concurrency",
+    "warning": "Existing Starlette TestClient httpx deprecation",
+    "ruff": "passed for all four changed/new Python files",
+    "alembic_upgrade_head": "passed",
+    "alembic_check": "no drift",
+    "migration_head": "0007_dashboard_polling"
+  },
+  "pipeline": {
+    "events": 10000,
+    "seed": 42,
+    "scenario": "mixed",
+    "start_date": "2026-10-05",
+    "database": "PGlite PostgreSQL 17.5 via socket adapter",
+    "steps": {
+      "ingest": {
+        "wall_ms": 5168.65
+      },
+      "detect": {
+        "wall_ms": 13724.46
+      },
+      "risk": {
+        "wall_ms": 88.24
+      },
+      "incidents": {
+        "wall_ms": 489.38
+      },
+      "intelligence": {
+        "wall_ms": 340.11
+      }
+    },
+    "supplemental_workflow_fixture": {
+      "events": 51,
+      "description": "50 failed admin-console logins in 49 seconds from a synthetic reputation indicator, followed by one successful login; normal detection/risk/incident engines used"
+    },
+    "counts": {
+      "security_events": 10051,
+      "detection_findings": 88,
+      "risk_assessments": 88,
+      "incidents": 30,
+      "threat_intelligence_results": 35
+    },
+    "rule_counts": [
+      {
+        "rule_id": "CS-001",
+        "findings": 6
+      },
+      {
+        "rule_id": "CS-002",
+        "findings": 2
+      },
+      {
+        "rule_id": "CS-003",
+        "findings": 4
+      },
+      {
+        "rule_id": "CS-004",
+        "findings": 3
+      },
+      {
+        "rule_id": "CS-005",
+        "findings": 3
+      },
+      {
+        "rule_id": "CS-006",
+        "findings": 3
+      },
+      {
+        "rule_id": "CS-007",
+        "findings": 7
+      },
+      {
+        "rule_id": "CS-008",
+        "findings": 56
+      },
+      {
+        "rule_id": "CS-009",
+        "findings": 4
+      },
+      {
+        "rule_id": "CS-010",
+        "findings": 0
+      }
+    ],
+    "processed_events": 10051,
+    "invalid_evidence_references": 0
+  },
+  "browser": {
+    "pages": [
+      {
+        "tab": "overview",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1231,
+        "document_overflow": false
+      },
+      {
+        "tab": "timeline",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1270,
+        "document_overflow": false
+      },
+      {
+        "tab": "findings",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1278,
+        "document_overflow": false
+      },
+      {
+        "tab": "events",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1189,
+        "document_overflow": false
+      },
+      {
+        "tab": "threat-intelligence",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1160,
+        "document_overflow": false
+      },
+      {
+        "tab": "notes",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1195,
+        "document_overflow": false
+      },
+      {
+        "tab": "overview",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1245,
+        "document_overflow": false
+      },
+      {
+        "tab": "timeline",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1271,
+        "document_overflow": false
+      },
+      {
+        "tab": "findings",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1308,
+        "document_overflow": false
+      },
+      {
+        "tab": "events",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1276,
+        "document_overflow": false
+      },
+      {
+        "tab": "threat-intelligence",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1264,
+        "document_overflow": false
+      },
+      {
+        "tab": "notes",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1183,
+        "document_overflow": false
+      },
+      {
+        "tab": "overview",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1197,
+        "document_overflow": false
+      },
+      {
+        "tab": "timeline",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1339,
+        "document_overflow": false
+      },
+      {
+        "tab": "findings",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1324,
+        "document_overflow": false
+      },
+      {
+        "tab": "events",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1241,
+        "document_overflow": false
+      },
+      {
+        "tab": "threat-intelligence",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1208,
+        "document_overflow": false
+      },
+      {
+        "tab": "notes",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1130,
+        "document_overflow": false
+      },
+      {
+        "tab": "overview",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1179,
+        "document_overflow": false
+      },
+      {
+        "tab": "timeline",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1221,
+        "document_overflow": false
+      },
+      {
+        "tab": "findings",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1202,
+        "document_overflow": false
+      },
+      {
+        "tab": "events",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1132,
+        "document_overflow": false
+      },
+      {
+        "tab": "threat-intelligence",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1172,
+        "document_overflow": false
+      },
+      {
+        "tab": "notes",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1125,
+        "document_overflow": false
+      }
+    ],
+    "checks": [
+      "Analyst login, critical queue filter preserved, direct case URL and browser reload work",
+      "Stored risk components, expanded finding/correlation evidence, event drawer raw data and focus trap, backend event filters, global descending timeline, simulated provider details and one explicit enrichment request",
+      "Assign to me, start investigation, preserve unsaved note during refresh, persist note, require resolution summary, resolve and verify corresponding timeline/audit actions",
+      "Reopen confirmation and false-positive required reason; raw event, finding and incident totals unchanged",
+      "Stable 15-second detail polling; leaving investigation stops case requests",
+      "Secondary intelligence error isolation and explicit missing-incident state",
+      "Viewer reads notes/evidence/intelligence but cannot mutate; backend 403 without logout; administrator controls visible",
+      "Swagger exposes eligible analyst directory and existing investigation operations"
+    ],
+    "performance": {},
+    "mutations": {
+      "POST /api/threats/enrich/incidents": 2,
+      "PATCH /api/incidents/INC-20261011-F4F5F13AD2A146118667480DF6524393/assign": 2,
+      "PATCH /api/incidents/INC-20261011-F4F5F13AD2A146118667480DF6524393/status": 5,
+      "POST /api/incidents/INC-20261011-F4F5F13AD2A146118667480DF6524393/comments": 2
+    },
+    "incident_id": "INC-20261011-F4F5F13AD2A146118667480DF6524393",
+    "retained": {
+      "events": 10051,
+      "findings": 88,
+      "incidents": 30
+    },
+    "polling": {
+      "seconds": 16.202,
+      "detail_requests": 1
+    },
+    "expected_auth_bootstrap_401": 3,
+    "page_errors": [],
+    "console_warnings": [],
+    "unexpected_api_errors": [],
+    "request_count": 168
+  },
+  "timing_scope": "Browser page times include navigation, loading wait, 180ms settling delay, assertions, and full-page PNG capture; not isolated API latency or production performance.",
+  "page_check_timing_ms": {
+    "min": 1125,
+    "median": 1214.5,
+    "max": 1339
+  },
+  "mutation_count_note": "Browser mutation counts include four deliberately rejected VIEWER attempts: one each for assignment, status, comment and intelligence refresh.",
+  "limits": [
+    "Docker Desktop and PowerShell unavailable; Windows Compose and verification script require local execution.",
+    "Embedded PostgreSQL validation does not establish native database concurrency behavior.",
+    "Browser exercised Vite development server; production bundles built but not deployed.",
+    "Threat intelligence used explicit mock mode; no live provider API tested or called.",
+    "Synthetic test evidence is not a real production incident or accuracy benchmark."
+  ]
+}

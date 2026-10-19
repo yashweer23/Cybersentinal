@@ -1,0 +1,65 @@
+{
+  "database": "PGlite PostgreSQL 17.5, isolated disk directory; serialized socket adapter",
+  "clean_migrations": "passed",
+  "existing_migrations_preserve_all_rows": "passed",
+  "docker_runtime": "unavailable",
+  "native_pg_client": "17.11",
+  "browser": {
+    "login": "passed",
+    "deep_link_refresh": "passed",
+    "pages": [
+      "overview",
+      "analytics",
+      "system health",
+      "incidents"
+    ],
+    "csp_violations": [],
+    "page_errors": [],
+    "unexpected_api_errors": [],
+    "api_404": "JSON",
+    "missing_asset": 404,
+    "docs": "passed",
+    "operation_ids": 88,
+    "request_id": "passed"
+  },
+  "database_stop_start_and_pool_reconnect": "passed (embedded database + real SQLAlchemy pool)",
+  "backend_stop_start_and_proxy_recovery": "passed (native process)",
+  "persistent_business_rows_after_restart": "passed (embedded disk storage)",
+  "pg_dump_exit": 0,
+  "pg_restore_exit": 1,
+  "pg_restore_limitation": "Native restore reached COPY FROM stdin and failed in the embedded PGlite socket/WASM adapter. Full native Docker restore remains unverified.",
+  "pytest": {
+    "passed": 68,
+    "seconds": 16.86,
+    "warning": "Existing Starlette/httpx deprecation"
+  },
+  "frontend_tests": {
+    "passed": 5,
+    "files": 2
+  },
+  "compose": "2.39.4 config validation only: production + development",
+  "powershell": "7.5.4 parse and mocked Docker command contract checks; not Windows 5.1 or real containers",
+  "compatibility_protected_files_unchanged": 105,
+  "production_build": "passed",
+  "native_docker_status": "unavailable: builds, container execution, volume permissions and full restore not verified",
+  "table_counts": {
+    "ai_analyses": 1,
+    "alembic_version": 1,
+    "audit_logs": 14,
+    "auth_sessions": 0,
+    "detection_findings": 6,
+    "detection_rules": 10,
+    "incident_comments": 1,
+    "incident_evidence": 17,
+    "incident_findings": 5,
+    "incident_processing": 6,
+    "incidents": 5,
+    "risk_assessments": 6,
+    "security_events": 1000,
+    "system_metrics": 20,
+    "threat_intelligence": 8,
+    "threat_intelligence_results": 8,
+    "threat_provider_state": 0,
+    "users": 1
+  }
+}

@@ -1,0 +1,45 @@
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+node_modules/
+dist/
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+# Offline synthetic datasets are generated locally, not committed.
+/backend/data/*
+!/backend/data/.gitkeep
+/data/
+
+# Runtime operational artifacts (database backups are not analytics exports).
+/backups/
+/reports/
+/logs/
+*.dump
+*.dump.sha256
+*.backup
+*.pgpass
+.pgpass
+*.key
+*.p12
+*.pfx
+/secrets/
+/credentials/
+
+# Optional browser/audit tools and local validation outputs.
+/.validation-tools/
+/browser-results.json
+/jmeter.log
+coverage/
+test-results/
+playwright-report/

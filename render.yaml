@@ -1,0 +1,100 @@
+# Deployment preparation: creates paid resources. Review docs/DEPLOYMENT.md first.
+# No account resources have been created or verified by this file alone.
+projects:
+  - name: cybersentinel
+    environments:
+      - name: production
+        services:
+          - type: pserv
+            name: cybersentinel-api
+            runtime: docker
+            region: singapore
+            plan: 0.5c-512mb
+            numInstances: 1
+            autoDeployTrigger: "off"
+            dockerfilePath: ./backend/Dockerfile
+            dockerContext: ./backend
+            preDeployCommand: python -m scripts.cloud_release --migrate
+            maxShutdownDelaySeconds: 90
+            envVars:
+              - key: APP_ENV
+                value: production
+              - key: LOG_LEVEL
+                value: INFO
+              - key: SERVER_PORT
+                value: "8000"
+              - key: SERVER_WORKERS
+                value: "1"
+              - key: PROXY_HEADERS_ENABLED
+                value: "false"
+              - key: ALLOWED_HOSTS
+                value: '["localhost","127.0.0.1"]'
+              # After allocation set PUBLIC_ORIGIN=https://<actual-web-host> on this service.
+              # Until then browser authentication is intentionally unavailable.
+              - key: CORS_ORIGINS
+                value: '[]'
+              - key: AUTH_TRUSTED_ORIGINS
+                value: '[]'
+              - key: DATABASE_URL
+                fromDatabase:
+                  name: cybersentinel-postgres
+                  property: connectionString
+              - key: EXPECTED_DATABASE_NAME
+                fromDatabase:
+                  name: cybersentinel-postgres
+                  property: database
+              - key: DATABASE_SSLMODE
+                value: require
+              - key: JWT_SECRET_KEY
+                generateValue: true
+              - key: DB_POOL_SIZE
+                value: "3"
+              - key: DB_MAX_OVERFLOW
+                value: "2"
+              - key: DB_CONNECT_TIMEOUT_SECONDS
+                value: "5"
+              - key: AI_PROVIDER
+                value: fallback
+              - key: THREAT_INTELLIGENCE_MOCK_MODE
+                value: "true"
+              - key: ABUSEIPDB_ENABLED
+                value: "false"
+              - key: VIRUSTOTAL_ENABLED
+                value: "false"
+              - key: OTX_ENABLED
+                value: "false"
+              - key: API_DOCS_ENABLED
+                value: "true"
+          - type: web
+            name: cybersentinel-web
+            runtime: docker
+            region: singapore
+            plan: 0.5c-512mb
+            numInstances: 1
+            autoDeployTrigger: "off"
+            dockerfilePath: ./frontend/Dockerfile
+            dockerContext: ./frontend
+            healthCheckPath: /healthz
+            maxShutdownDelaySeconds: 90
+            envVars:
+              - key: PORT
+                value: "10000"
+              - key: PUBLIC_SCHEME
+                value: https
+              - key: NGINX_RESOLVER
+                value: auto
+              - key: BACKEND_UPSTREAM
+                fromService:
+                  type: pserv
+                  name: cybersentinel-api
+                  property: hostport
+        databases:
+          - name: cybersentinel-postgres
+            region: singapore
+            plan: 0.1c-256mb
+            databaseName: cybersentinel
+            user: cybersentinel
+            postgresMajorVersion: "17"
+            diskSizeGB: 1
+            storageAutoscalingEnabled: false
+            ipAllowList: []

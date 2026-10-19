@@ -1,0 +1,297 @@
+{
+  "created_at": "2026-10-18T13:48:14.674300+00:00",
+  "count": 10000,
+  "seed": 42,
+  "scenario": "mixed",
+  "external_providers": "mock",
+  "database_version": "PostgreSQL 18.6 (PGlite 0.5.10) on wasm32-unknown-emscripten, compiled by emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 6.0.5 (1db513782be24469589d7cb8a1f1834e9a33f271), 32-bit",
+  "start_date": "2026-10-11",
+  "counts": {
+    "security_events": 10000,
+    "detection_findings": 36,
+    "risk_assessments": 36,
+    "incidents": 29,
+    "incident_findings": 29,
+    "incident_evidence": 160,
+    "incident_processing": 36
+  },
+  "idempotency": {
+    "passed": true,
+    "replay_duplicates": 36,
+    "raw_events_unchanged": true
+  },
+  "integrity": {
+    "finding_event_references": 0,
+    "incident_event_references": 0,
+    "incident_finding_references": 0,
+    "assessment_references": 0,
+    "duplicate_fingerprints": 0,
+    "duplicate_incident_links": 0,
+    "invalid_risk": 0
+  },
+  "unprocessed_events": 0,
+  "rule_counts": [
+    {
+      "rule_id": "CS-001",
+      "findings": 5
+    },
+    {
+      "rule_id": "CS-002",
+      "findings": 2
+    },
+    {
+      "rule_id": "CS-003",
+      "findings": 4
+    },
+    {
+      "rule_id": "CS-004",
+      "findings": 3
+    },
+    {
+      "rule_id": "CS-005",
+      "findings": 3
+    },
+    {
+      "rule_id": "CS-006",
+      "findings": 3
+    },
+    {
+      "rule_id": "CS-007",
+      "findings": 7
+    },
+    {
+      "rule_id": "CS-008",
+      "findings": 5
+    },
+    {
+      "rule_id": "CS-009",
+      "findings": 4
+    },
+    {
+      "rule_id": "CS-010",
+      "findings": 0
+    }
+  ],
+  "evaluation": {
+    "scope": {
+      "start": "2026-10-11T00:00:00Z",
+      "end": "2026-10-18T13:48:47.703322Z",
+      "preset": null,
+      "as_of": "2026-10-18T13:48:47.752916Z",
+      "boundary": "[start,end)"
+    },
+    "definition": "Generator-labelled evidence only. Expected units are distinct (rule, scenario_id) with events in range; findings must have last_seen in range and retained synthetic evidence in range. Recall measures covered expected units. Boundary truncation and overlapping behavior limit interpretation. Not real-world accuracy.",
+    "label": "Synthetic Evaluation Only",
+    "expected_scenarios": 37,
+    "detected_scenarios": 36,
+    "missed_scenarios": 1,
+    "unexpected_findings": 0,
+    "findings_evaluated": 36,
+    "scenario_recall": 0.972972972972973,
+    "finding_label_agreement": 1.0,
+    "precision": null,
+    "precision_note": "Label agreement is not precision: overlapping behavior and retained evidence cannot establish false positives."
+  },
+  "clean_and_populated_migrations": "passed",
+  "status": "passed",
+  "scope": "Local isolated embedded PostgreSQL 18.6 / PGlite 0.5.10, not native PostgreSQL 17, Docker or Render. Serial API timings include TestClient serialization; no JMeter in this run.",
+  "steps": {
+    "generate": {
+      "wall_ms": 1244.589
+    },
+    "ingest": {
+      "wall_ms": 5594.478,
+      "events_per_second": 1787.48
+    },
+    "detect": {
+      "wall_ms": 11384.684,
+      "events_per_second": 878.37
+    },
+    "risk": {
+      "wall_ms": 74.47
+    },
+    "incidents": {
+      "wall_ms": 417.829
+    },
+    "ingest_repeat": {
+      "wall_ms": 4970.852
+    },
+    "detect_replay": {
+      "wall_ms": 7127.725
+    },
+    "intelligence_0": {
+      "wall_ms": 260.478
+    },
+    "ai_fallback": {
+      "wall_ms": 113.534
+    }
+  },
+  "ai_mode": "FALLBACK",
+  "intelligence": {
+    "mode": "mock",
+    "simulation": true,
+    "incidents_evaluated": 29,
+    "unique_indicators": 34,
+    "indicators_evaluated": 34,
+    "cache_hits": 0,
+    "external_lookups": 0,
+    "provider_requests": 0,
+    "provider_evaluations": 34,
+    "failed_lookups": 0,
+    "unknown_lookups": 17,
+    "incidents_enriched": 19,
+    "duration_ms": 256.857,
+    "complete": true,
+    "next_offset": null,
+    "error": null
+  },
+  "http": {
+    "latencies": {
+      "/api/dashboard/overview?range=7d": {
+        "samples": 5,
+        "mean_ms": 14.235,
+        "median_ms": 13.943,
+        "p95_ms": 15.863,
+        "min_ms": 13.236,
+        "max_ms": 15.863,
+        "response_bytes": 435
+      },
+      "/api/dashboard/events/recent?range=7d": {
+        "samples": 5,
+        "mean_ms": 5.356,
+        "median_ms": 5.317,
+        "p95_ms": 6.162,
+        "min_ms": 4.553,
+        "max_ms": 6.162,
+        "response_bytes": 6748
+      },
+      "/api/dashboard/events/updates?after_id=0&limit=20": {
+        "samples": 5,
+        "mean_ms": 4.975,
+        "median_ms": 4.972,
+        "p95_ms": 5.397,
+        "min_ms": 4.612,
+        "max_ms": 5.397,
+        "response_bytes": 6725
+      },
+      "/api/incidents?limit=20": {
+        "samples": 5,
+        "mean_ms": 7.193,
+        "median_ms": 6.481,
+        "p95_ms": 9.477,
+        "min_ms": 6.034,
+        "max_ms": 9.477,
+        "response_bytes": 18264
+      },
+      "/api/detections?limit=20": {
+        "samples": 5,
+        "mean_ms": 8.685,
+        "median_ms": 9.211,
+        "p95_ms": 10.03,
+        "min_ms": 7.299,
+        "max_ms": 10.03,
+        "response_bytes": 50104
+      },
+      "/api/analytics/overview?range=7d": {
+        "samples": 5,
+        "mean_ms": 31.878,
+        "median_ms": 29.439,
+        "p95_ms": 38.329,
+        "min_ms": 27.762,
+        "max_ms": 38.329,
+        "response_bytes": 960
+      },
+      "/api/analytics/events/trend?range=7d": {
+        "samples": 5,
+        "mean_ms": 13.215,
+        "median_ms": 12.491,
+        "p95_ms": 15.781,
+        "min_ms": 12.234,
+        "max_ms": 15.781,
+        "response_bytes": 1495
+      },
+      "/api/analytics/detections/rules?range=7d": {
+        "samples": 5,
+        "mean_ms": 8.35,
+        "median_ms": 8.629,
+        "p95_ms": 9.416,
+        "min_ms": 7.286,
+        "max_ms": 9.416,
+        "response_bytes": 3016
+      },
+      "/api/reports/incidents?format=csv&range=7d&limit=100": {
+        "samples": 5,
+        "mean_ms": 5.32,
+        "median_ms": 5.237,
+        "p95_ms": 5.891,
+        "min_ms": 4.891,
+        "max_ms": 5.891,
+        "response_bytes": 6825
+      },
+      "/api/reports/security-summary?range=7d": {
+        "samples": 5,
+        "mean_ms": 60.505,
+        "median_ms": 59.68,
+        "p95_ms": 65.117,
+        "min_ms": 58.957,
+        "max_ms": 65.117,
+        "response_bytes": 30929
+      },
+      "/api/incidents/INC-20261018-1334DD55BE9B456396CA3634CA8990FF": {
+        "samples": 5,
+        "mean_ms": 23.254,
+        "median_ms": 20.574,
+        "p95_ms": 33.492,
+        "min_ms": 19.257,
+        "max_ms": 33.492,
+        "response_bytes": 16042
+      }
+    },
+    "openapi_operations": 88,
+    "anonymous_denied": true
+  },
+  "verification": {
+    "backend": {
+      "passed": 837,
+      "skipped": 1,
+      "seconds": 62.34,
+      "skip": "native independent-connection concurrency not supported by this embedded backend"
+    },
+    "frontend": {
+      "passed": 86,
+      "test_files": 7,
+      "seconds": 4.04
+    },
+    "frontend_build": {
+      "status": "passed",
+      "milliseconds": 363
+    },
+    "ruff_check": "passed",
+    "new_python_format": "8 files passed",
+    "native_nginx": {
+      "status": "passed",
+      "version": "1.30.0",
+      "checks": [
+        "/",
+        "/incidents",
+        "/incidents/CS-SYNTHETIC",
+        "/analytics",
+        "/ai-analyst",
+        "/threat-intelligence",
+        "trusted scheme and overwritten forwarded IP",
+        "API and missing assets do not use SPA fallback",
+        "five invalid runtime configurations rejected"
+      ],
+      "scope": "Native local Nginx; test-only filesystem paths, one root worker; not Docker or Render ingress"
+    },
+    "render_blueprint_json_schema": {
+      "status": "passed",
+      "validation": "official Render JSON Schema; not account-side acceptance",
+      "projects": 1,
+      "environments": 1,
+      "services": 2,
+      "databases": 1
+    },
+    "cloud_demo_runner": "1000-event real API initialization and replay passed in pytest; 4 unsafe-initialization cases passed"
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "phase": 13,
+  "scope": "Evidence-grounded AI Security Analyst; no Phase 14 work",
+  "environment": {
+    "database": "PGlite PostgreSQL 17.5 via a local socket adapter",
+    "backend": "Real FastAPI/SQLAlchemy/psycopg application",
+    "browser": "Chromium against real Vite and Uvicorn servers",
+    "data": "Isolated synthetic validation data",
+    "docker_executed": false,
+    "powershell_executed": false,
+    "live_llm_executed": false,
+    "native_postgresql_concurrency_verified": false
+  },
+  "backend_tests": {
+    "passed": 683,
+    "skipped": 1,
+    "warnings": 1,
+    "duration_seconds": 44.52,
+    "skip_reason": "Existing test requires independent native PostgreSQL writer concurrency",
+    "warning": "Existing Starlette TestClient/httpx deprecation",
+    "note": "Full regression run; the final context-digest expansion was subsequently verified by all 29 Phase 13 tests and the complete pipeline/browser run."
+  },
+  "final_phase13_backend_tests": {
+    "passed": 29,
+    "warnings": 1,
+    "duration_seconds": 6.65
+  },
+  "frontend_tests": {
+    "passed": 58,
+    "files": 4,
+    "duration_seconds": 3.5,
+    "new_phase13_tests": 10,
+    "source": "Observed final Vitest terminal result"
+  },
+  "frontend_build": {
+    "status": "passed",
+    "duration_ms": 324,
+    "modules_transformed": 2613,
+    "dependency_changes": false
+  },
+  "lint": {
+    "status": "passed",
+    "changed_python_files": 27,
+    "format_check": "passed"
+  },
+  "migrations": {
+    "head": "0008_ai_analyses",
+    "clean_upgrade": "passed",
+    "autogenerate_drift_check": "no new upgrade operations",
+    "round_trip_test": "passed"
+  },
+  "pipeline": {
+    "events": 10000,
+    "seed": 42,
+    "scenario": "mixed",
+    "start_date": "2026-10-06",
+    "database": "PGlite PostgreSQL 17.5 via socket adapter",
+    "steps": {
+      "ingest": {
+        "wall_ms": 4675.44
+      },
+      "detect": {
+        "wall_ms": 12259.96
+      },
+      "risk": {
+        "wall_ms": 76.88
+      },
+      "incidents": {
+        "wall_ms": 439.25
+      },
+      "intelligence": {
+        "wall_ms": 281.17
+      }
+    },
+    "supplemental_workflow_fixture": {
+      "events": 51,
+      "description": "50 failed admin-console logins in 49 seconds from a synthetic reputation indicator, followed by one successful login; normal detection/risk/incident engines used"
+    },
+    "counts": {
+      "security_events": 10051,
+      "detection_findings": 89,
+      "risk_assessments": 89,
+      "incidents": 30,
+      "threat_intelligence_results": 35
+    },
+    "rule_counts": [
+      {
+        "rule_id": "CS-001",
+        "findings": 6
+      },
+      {
+        "rule_id": "CS-002",
+        "findings": 2
+      },
+      {
+        "rule_id": "CS-003",
+        "findings": 4
+      },
+      {
+        "rule_id": "CS-004",
+        "findings": 4
+      },
+      {
+        "rule_id": "CS-005",
+        "findings": 3
+      },
+      {
+        "rule_id": "CS-006",
+        "findings": 3
+      },
+      {
+        "rule_id": "CS-007",
+        "findings": 7
+      },
+      {
+        "rule_id": "CS-008",
+        "findings": 56
+      },
+      {
+        "rule_id": "CS-009",
+        "findings": 4
+      },
+      {
+        "rule_id": "CS-010",
+        "findings": 0
+      }
+    ],
+    "processed_events": 10051,
+    "invalid_evidence_references": 0
+  },
+  "performance": {
+    "database": "PGlite PostgreSQL 17.5; local single-process adapter",
+    "external_provider": "not tested; no API credentials used",
+    "samples": 10,
+    "context_build_ms": {
+      "median": 44.492,
+      "min": 40.781,
+      "max": 61.019,
+      "samples": [
+        61.019,
+        43.208,
+        42.744,
+        52.646,
+        40.781,
+        44.461,
+        43.894,
+        45.433,
+        44.896,
+        44.524
+      ]
+    },
+    "fallback_request_ms": {
+      "median": 92.877,
+      "min": 88.448,
+      "max": 99.536,
+      "samples": [
+        93.818,
+        90.797,
+        94.865,
+        91.704,
+        88.448,
+        92.88,
+        92.402,
+        92.874,
+        99.536,
+        93.428
+      ]
+    },
+    "cached_request_ms": {
+      "median": 47.349,
+      "min": 45.185,
+      "max": 48.99,
+      "samples": [
+        45.185,
+        48.99,
+        48.651,
+        45.92,
+        46.065,
+        48.361,
+        47.14,
+        46.984,
+        47.997,
+        47.558
+      ]
+    },
+    "context_coverage": {
+      "findings_total": 1,
+      "findings_included": 1,
+      "events_total": 1,
+      "events_included": 1,
+      "indicators_total": 2,
+      "indicators_included": 2
+    },
+    "mock_provider_ms": 1.372,
+    "mock_request_ms": 95.52
+  },
+  "browser": {
+    "checks": [
+      "Analyst login; real critical case; no automatic generation; fallback report; 6 stored risk contributions; bounded evidence; cached analysis; valid references",
+      "Finding drawer and Q&A source event drawer; successful login after failures references two actual case events",
+      "Supported analyst note makes earlier report stale; explicit regeneration creates new current report and retains prior history",
+      "General analyst incident picker and controlled security overview; truthful fallback health; all 6 Swagger endpoints; authoritative case fields unchanged",
+      "Viewer reads saved reports, has no generation/question controls, receives server-side 403 for all write requests"
+    ],
+    "pages": [
+      {
+        "view": "incident-analysis",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "view": "incident-analysis",
+        "width": 1366,
+        "overflow": false
+      },
+      {
+        "view": "incident-analysis",
+        "width": 390,
+        "overflow": false
+      }
+    ],
+    "performance": {
+      "first_ui_report_ms": 249,
+      "cached_http_ms": 73.5
+    },
+    "incident_id": "INC-20261012-BD817A2DB2694B7FBB5D3B0F3EAE7584",
+    "page_errors": [],
+    "console_issues": [],
+    "unexpected_api_errors": [],
+    "request_count": 56,
+    "report": {
+      "coverage": {
+        "events_total": 51,
+        "findings_total": 53,
+        "events_included": 50,
+        "indicators_total": 2,
+        "findings_included": 20,
+        "indicators_included": 2
+      },
+      "analysis_mode": "FALLBACK",
+      "generated_versions": 2,
+      "successful_login_answer": "Yes. A linked LOGIN_SUCCESS for the same account alias occurred 1 seconds after a linked LOGIN_FAILED event. This sequence does not establish whether the login was authorized."
+    }
+  },
+  "limitations": [
+    "Embedded PostgreSQL measurements are not a native production database benchmark.",
+    "Mock-provider timings do not measure external model/network latency.",
+    "The seeded 10,000-event mixed budget includes no abnormal_api scenario; CS-010 executes but has zero findings in this fixture.",
+    "The local single-process rate limiter and per-incident lock require deployment-specific concurrency verification before multi-worker scaling."
+  ]
+}

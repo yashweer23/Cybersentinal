@@ -1,0 +1,20 @@
+.env*
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.coverage
+
+# Keep generated datasets out of image layers; retain data/.gitkeep.
+data/**/*.json
+data/**/*.jsonl
+data/**/*.csv
+data/**/.cybersentinel-*.tmp
+.git
+logs
+backups
+reports
+htmlcov
+*.dump
+*.sql

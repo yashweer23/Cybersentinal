@@ -1,0 +1,104 @@
+name: cybersentinel
+
+x-service-defaults: &service-defaults
+  restart: "on-failure:5"
+  logging:
+    driver: json-file
+    options:
+      max-size: "10m"
+      max-file: "3"
+
+services:
+  db:
+    <<: *service-defaults
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-cybersentinel}
+      POSTGRES_USER: ${POSTGRES_USER:-cybersentinel}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run scripts/Initialize-Environment.ps1 first}
+    # No database host port in the default stack. compose.dev.yml enables local access.
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks: [database]
+    stop_grace_period: 60s
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+
+  backend:
+    <<: *service-defaults
+    build:
+      context: ./backend
+      target: production
+    env_file: [.env]
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_PORT: "5432"
+      SERVER_HOST: "0.0.0.0"
+      SERVER_PORT: "8000"
+      BACKEND_PORT: ${BACKEND_PORT:-8000}
+      CORS_ORIGINS: '${CORS_ORIGINS:-["http://localhost:5173","http://127.0.0.1:5173"]}'
+      AUTH_TRUSTED_ORIGINS: ${AUTH_TRUSTED_ORIGINS:-[]}
+    ports:
+      - "127.0.0.1:${BACKEND_PORT:-8000}:8000"
+    # Explicit output storage, not a production source-code mount.
+    volumes:
+      - runtime_data:/app/backend/data
+    networks: [web, database]
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=128m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+    stop_grace_period: 90s
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/system/live', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 4
+      start_period: 15s
+
+  frontend:
+    <<: *service-defaults
+    build:
+      context: ./frontend
+      target: production
+    environment:
+      BACKEND_UPSTREAM: backend:8000
+      NGINX_RESOLVER: 127.0.0.11
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-5173}:8080"
+    networks: [web]
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+    stop_grace_period: 30s
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8080/healthz"]
+      interval: 15s
+      timeout: 5s
+      retries: 4
+      start_period: 15s
+
+volumes:
+  # Preserve the existing cybersentinel_postgres_data volume identity.
+  postgres_data:
+  runtime_data:
+
+networks:
+  web:
+  database:
+    internal: true

@@ -1,0 +1,437 @@
+{
+  "frontend_tests": {
+    "passed": 26,
+    "failed": 0
+  },
+  "backend_tests": {
+    "passed": 646,
+    "skipped": 1,
+    "failed": 0
+  },
+  "docker_executed": false,
+  "powershell_executed": false,
+  "clean_npm_ci_build": "passed",
+  "pipeline": {
+    "events": 10000,
+    "seed": 42,
+    "scenario": "mixed",
+    "start_date": "2026-10-04",
+    "database": "PGlite PostgreSQL 17.5 via socket adapter",
+    "steps": {
+      "ingest": {
+        "wall_ms": 7250.85
+      },
+      "detect": {
+        "wall_ms": 23077.42
+      },
+      "risk": {
+        "wall_ms": 125.76
+      },
+      "incidents": {
+        "wall_ms": 954.37
+      },
+      "intelligence": {
+        "wall_ms": 646.75
+      }
+    },
+    "counts": {
+      "security_events": 10000,
+      "detection_findings": 36,
+      "risk_assessments": 36,
+      "incidents": 29,
+      "threat_intelligence_results": 34
+    },
+    "rule_counts": [
+      {
+        "rule_id": "CS-001",
+        "findings": 5
+      },
+      {
+        "rule_id": "CS-002",
+        "findings": 2
+      },
+      {
+        "rule_id": "CS-003",
+        "findings": 4
+      },
+      {
+        "rule_id": "CS-004",
+        "findings": 3
+      },
+      {
+        "rule_id": "CS-005",
+        "findings": 3
+      },
+      {
+        "rule_id": "CS-006",
+        "findings": 3
+      },
+      {
+        "rule_id": "CS-007",
+        "findings": 7
+      },
+      {
+        "rule_id": "CS-008",
+        "findings": 5
+      },
+      {
+        "rule_id": "CS-009",
+        "findings": 4
+      },
+      {
+        "rule_id": "CS-010",
+        "findings": 0
+      }
+    ],
+    "processed_events": 10000,
+    "invalid_evidence_references": 0
+  },
+  "browser": {
+    "pages": [
+      {
+        "route": "/",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 2853,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/incidents",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 2016,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/events",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1571,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/threat-intelligence",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1460,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/analytics",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1662,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/rules",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1405,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/health",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1466,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/settings",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1474,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/ai-analyst",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 904,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/admin",
+        "width": 1366,
+        "height": 768,
+        "load_and_settle_ms": 1414,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1589,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/incidents",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1369,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/events",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1418,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/threat-intelligence",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1324,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/analytics",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1658,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/rules",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1296,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/health",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1295,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/settings",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1330,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/ai-analyst",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1151,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/admin",
+        "width": 1440,
+        "height": 900,
+        "load_and_settle_ms": 1170,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1534,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/incidents",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1524,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/events",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1450,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/threat-intelligence",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1306,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/analytics",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1543,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/rules",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1300,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/health",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1210,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/settings",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1249,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/ai-analyst",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1190,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/admin",
+        "width": 1920,
+        "height": 1080,
+        "load_and_settle_ms": 1198,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1531,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/incidents",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1304,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/events",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1282,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/threat-intelligence",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1191,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/analytics",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1518,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/rules",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1191,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/health",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1185,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/settings",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1225,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/ai-analyst",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1147,
+        "document_overflow": false,
+        "alerts": 0
+      },
+      {
+        "route": "/admin",
+        "width": 390,
+        "height": 844,
+        "load_and_settle_ms": 1180,
+        "document_overflow": false,
+        "alerts": 0
+      }
+    ],
+    "checks": [
+      "Real UTC range queries update aggregates",
+      "40 responsive page captures; no document overflow; mobile drawer Escape and focus return",
+      "Server-side HIGH/minimum-risk filter, page 2 offset, incident summary route",
+      "Single 5-second polling loop; pause/resume; 600 late logs drained; 500-row cap; clear preserves DB; unmount stops polling; admin toggle round trip",
+      "Explicit mocked-provider lookup; health failure removes old healthy cards",
+      "Viewer/Analyst controls, server 403 without logout, cookie refresh after reload, user-isolated cache, preferences-only Web Storage"
+    ],
+    "performance": {
+      "initial_login_and_dashboard_ms": 3344,
+      "range_24h_events": 1423,
+      "range_7d_events": 10000
+    },
+    "expected_auth_bootstrap_401": 3,
+    "live_polling": {
+      "requests_in_10_8_seconds": 2,
+      "injected_late_events": 600,
+      "retained_rows": 500,
+      "stored_events_after_clear": 10600
+    },
+    "page_errors": [],
+    "console_warnings": [],
+    "unexpected_api_errors": [],
+    "request_count": 267
+  }
+}

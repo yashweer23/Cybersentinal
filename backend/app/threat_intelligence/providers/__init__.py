@@ -1,0 +1,1 @@
+"""Fixed-host reputation adapters."""

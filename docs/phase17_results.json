@@ -1,0 +1,234 @@
+{
+  "phase": 17,
+  "measured_on": "2026-10-17T09:53:13.327818+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "node": "24.19.0",
+    "database": "PostgreSQL 18.6 (PGlite 0.5.10) on wasm32-unknown-emscripten, compiled by emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 6.0.5 (1db513782be24469589d7cb8a1f1834e9a33f271), 32-bit",
+    "database_pool_size": 1,
+    "frontend": "production Vite build served via local Vite preview",
+    "browser": "153.0.8010.0",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "docker_executed": false,
+    "external_provider_calls": 0
+  },
+  "pipeline": {
+    "count": 10000,
+    "seed": 42,
+    "scenario": "mixed",
+    "start_date": "2026-10-10",
+    "counts": {
+      "security_events": 10000,
+      "detection_findings": 36,
+      "risk_assessments": 36,
+      "incidents": 29,
+      "incident_findings": 29,
+      "incident_evidence": 160,
+      "incident_processing": 36
+    },
+    "idempotency": {
+      "passed": true,
+      "replay_duplicates": 36,
+      "raw_events_unchanged": true
+    },
+    "integrity": {
+      "finding_event_references": 0,
+      "incident_event_references": 0,
+      "incident_finding_references": 0,
+      "assessment_references": 0,
+      "duplicate_fingerprints": 0,
+      "duplicate_incident_links": 0,
+      "invalid_risk": 0
+    },
+    "unprocessed_events": 0,
+    "rule_counts": [
+      {
+        "rule_id": "CS-001",
+        "findings": 5
+      },
+      {
+        "rule_id": "CS-002",
+        "findings": 2
+      },
+      {
+        "rule_id": "CS-003",
+        "findings": 4
+      },
+      {
+        "rule_id": "CS-004",
+        "findings": 3
+      },
+      {
+        "rule_id": "CS-005",
+        "findings": 3
+      },
+      {
+        "rule_id": "CS-006",
+        "findings": 3
+      },
+      {
+        "rule_id": "CS-007",
+        "findings": 7
+      },
+      {
+        "rule_id": "CS-008",
+        "findings": 5
+      },
+      {
+        "rule_id": "CS-009",
+        "findings": 4
+      },
+      {
+        "rule_id": "CS-010",
+        "findings": 0
+      }
+    ],
+    "evaluation": {
+      "scope": {
+        "start": "2026-10-10T00:00:00Z",
+        "end": "2026-10-17T09:53:45.855877Z",
+        "preset": null,
+        "as_of": "2026-10-17T09:53:45.897937Z",
+        "boundary": "[start,end)"
+      },
+      "definition": "Generator-labelled evidence only. Expected units are distinct (rule, scenario_id) with events in range; findings must have last_seen in range and retained synthetic evidence in range. Recall measures covered expected units. Boundary truncation and overlapping behavior limit interpretation. Not real-world accuracy.",
+      "label": "Synthetic Evaluation Only",
+      "expected_scenarios": 37,
+      "detected_scenarios": 36,
+      "missed_scenarios": 1,
+      "unexpected_findings": 0,
+      "findings_evaluated": 36,
+      "scenario_recall": 0.972972972972973,
+      "finding_label_agreement": 1.0,
+      "precision": null,
+      "precision_note": "Label agreement is not precision: overlapping behavior and retained evidence cannot establish false positives."
+    },
+    "clean_and_populated_migrations": "passed",
+    "status": "passed"
+  },
+  "stage_measurements": {
+    "generate": {
+      "wall_ms": 1081.116
+    },
+    "ingest": {
+      "wall_ms": 5332.312,
+      "events_per_second": 1875.36
+    },
+    "detect": {
+      "wall_ms": 11052.652,
+      "events_per_second": 904.76
+    },
+    "risk": {
+      "wall_ms": 88.676
+    },
+    "incidents": {
+      "wall_ms": 401.335
+    },
+    "ingest_repeat": {
+      "wall_ms": 5062.447
+    },
+    "detect_replay": {
+      "wall_ms": 7393.134
+    },
+    "intelligence_0": {
+      "wall_ms": 244.145
+    },
+    "ai_fallback": {
+      "wall_ms": 134.482
+    }
+  },
+  "openapi": {
+    "paths": 87,
+    "operations": 88,
+    "anonymous_denied": true
+  },
+  "browser": {
+    "screenshots": 13,
+    "errors": [],
+    "captures": [
+      {
+        "name": "login",
+        "title": "Every investigation\nstarts with you."
+      },
+      {
+        "name": "overview",
+        "title": "Security overview"
+      },
+      {
+        "name": "events",
+        "title": "Live security events"
+      },
+      {
+        "name": "incidents",
+        "title": "Incident queue"
+      },
+      {
+        "name": "investigation",
+        "title": "Administrator privilege change requires review \u2014 employee004"
+      },
+      {
+        "name": "risk",
+        "title": "Administrator privilege change requires review \u2014 employee004"
+      },
+      {
+        "name": "timeline",
+        "title": "Administrator privilege change requires review \u2014 employee004"
+      },
+      {
+        "name": "intelligence",
+        "title": "Threat intelligence"
+      },
+      {
+        "name": "ai",
+        "title": "AI security analyst"
+      },
+      {
+        "name": "analytics",
+        "title": "Advanced security analytics"
+      },
+      {
+        "name": "reports",
+        "title": "Advanced security analytics"
+      },
+      {
+        "name": "health",
+        "title": "System health"
+      },
+      {
+        "name": "rules",
+        "title": "Detection rules"
+      }
+    ]
+  },
+  "frontend": {
+    "tests_passed": 86,
+    "files_passed": 7,
+    "seconds": 5.7,
+    "build": "passed"
+  },
+  "ruff": "passed",
+  "full_backend_suite": "Not rerun in Phase 17; preserved Phase 16: 799 passed, 1 native concurrency skip.",
+  "secret_scan": {
+    "tool": "detect-secrets 1.5.0",
+    "candidates": 16,
+    "classification": "Same unchanged scenario names/test fixtures/invalid token-hash and logging canaries as Phase 16. No live credential identified.",
+    "git_history_reviewed": false
+  },
+  "remaining_gates": [
+    "Native PostgreSQL independent-writer concurrency",
+    "Docker Desktop image build and container health/restart/outage recovery",
+    "Native PostgreSQL archive restore and restored-record verification",
+    "Windows PowerShell 5.1 execution",
+    "Live external provider validation is intentionally excluded; mocked contracts and fallbacks only"
+  ],
+  "documentation_checks": {
+    "local_links_and_anchors": 187,
+    "broken_local_links": 0,
+    "mermaid_diagrams_rendered": 20,
+    "cli_help_modules": 8,
+    "pydantic_examples_validated": 9
+  }
+}

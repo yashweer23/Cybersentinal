@@ -1,0 +1,202 @@
+// Explicit unit-test fixtures only. Never imported by application code.
+export const at = "2026-10-10T07:00:00Z";
+export const scope = {
+  start: "2026-10-09T07:00:00Z",
+  end: at,
+  preset: "24h",
+  as_of: at,
+};
+export const event = (id = "1", sequence = "1") => ({
+  id,
+  event_id: `EVT-${id}`,
+  ingestion_sequence: sequence,
+  timestamp: at,
+  event_type: "LOGIN_FAILED",
+  source_ip: "198.51.100.73",
+  destination_ip: "10.0.0.12",
+  username: "employee014",
+  service: "authentication",
+  status: "failed",
+  processed: true,
+});
+export const incident = {
+  incident_id: "INC-TEST-001",
+  title: "Possible brute force activity",
+  description: "Five failed logins within two minutes.",
+  severity: "HIGH",
+  risk_score: 71,
+  status: "OPEN",
+  source_ip: "198.51.100.73",
+  username: "employee014",
+  assigned_analyst: null,
+  detected_at: at,
+  confidence: 85,
+};
+export const provider = {
+  name: "CyberSentinelMock",
+  configured: true,
+  enabled: true,
+  active: true,
+  next_allowed_at: null,
+  last_status: null,
+};
+export const providers = {
+  enabled: true,
+  mode: "mock",
+  simulation: true,
+  providers: [provider],
+  note: "Configuration only; no external requests.",
+};
+export const threat = {
+  indicator: "198.51.100.73",
+  mode: "mock",
+  simulation: true,
+  reputation_level: "MALICIOUS",
+  normalized_score: 90,
+  checked_at: at,
+  expires_at: "2026-10-10T08:00:00Z",
+  stale: false,
+  configuration_changed: false,
+  lookup_status: "success",
+  explanation: "Synthetic provider observation.",
+  providers: [],
+};
+export const rule = {
+  rule_id: "CS-001",
+  name: "Brute Force Detection",
+  description: "Five failures in two minutes.",
+  severity: "HIGH",
+  enabled: true,
+  configuration: { failed_attempt_threshold: 5, window_seconds: 120 },
+};
+export const dashboard = {
+  overview: {
+    scope,
+    total_events: 10000,
+    events_in_range: 1240,
+    total_incidents: 29,
+    active_incidents: 29,
+    critical_incidents: 2,
+    high_risk_incidents: 20,
+    total_findings: 36,
+    suspicious_ips: 14,
+    average_risk_score: 61.4,
+    unprocessed_events: 0,
+  },
+  "events/timeline": {
+    scope,
+    total: 5,
+    bucket_seconds: 3600,
+    data: [
+      {
+        timestamp: at,
+        total: 5,
+        login_failed: 5,
+        access_denied: 0,
+        api_requests: 0,
+      },
+    ],
+  },
+  "incidents/severity": {
+    scope,
+    total: 1,
+    distribution: ["CRITICAL", "HIGH", "MEDIUM", "LOW"].map((severity) => ({
+      severity,
+      count: severity === "HIGH" ? 1 : 0,
+    })),
+  },
+  "risk/distribution": {
+    scope,
+    total: 1,
+    average_risk_score: 71,
+    distribution: [{ level: "HIGH", count: 1 }],
+  },
+  "incidents/status": {
+    scope,
+    total: 1,
+    distribution: [{ status: "OPEN", count: 1 }],
+  },
+  "events/types": {
+    scope,
+    total: 5,
+    distribution: [{ event_type: "LOGIN_FAILED", count: 5 }],
+  },
+  "events/recent": { scope, items: [event()], limit: 50, polling_cursor: "1" },
+  "events/updates": {
+    items: [],
+    next_cursor: "1",
+    head_cursor: "1",
+    has_more: false,
+    initialized: false,
+  },
+  "incidents/recent": { scope, items: [incident], limit: 5 },
+  "threats/top-ips": {
+    scope,
+    items: [
+      {
+        ip: "198.51.100.73",
+        incident_count: 1,
+        finding_count: 2,
+        highest_risk_score: 71,
+        latest_activity: at,
+        reputation_level: "MALICIOUS",
+        intelligence_status: "fresh",
+        simulation: true,
+      },
+    ],
+  },
+  "users/targeted": {
+    scope,
+    items: [
+      {
+        username: "employee014",
+        failed_logins: 5,
+        access_denials: 0,
+        finding_count: 1,
+        incident_count: 1,
+      },
+    ],
+  },
+  "detection/rules": {
+    scope,
+    items: [{ ...rule, finding_count: 1, latest_finding_timestamp: at }],
+  },
+  "threats/summary": {
+    scope,
+    mode: "mock",
+    simulation: true,
+    cached_indicators: 1,
+    malicious_indicators: 1,
+    suspicious_indicators: 0,
+    unknown_indicators: 0,
+    expired_indicators: 0,
+    incompatible_indicators: 0,
+    last_refresh: at,
+    providers,
+  },
+  "activity/summary": {
+    scope,
+    successful_logins: 12,
+    failed_logins: 5,
+    access_denials: 0,
+    api_requests: 4,
+    sensitive_record_accesses: 2,
+    privilege_changes: 1,
+  },
+  "system/health": {
+    as_of: at,
+    api: "healthy",
+    database: "connected",
+    total_events: 10000,
+    latest_event_timestamp: at,
+    detection_engine: {
+      status: "available_on_demand",
+      events_processed: 10000,
+      unprocessed_events: 0,
+      last_processing_time: at,
+      last_processing_duration_ms: 2100,
+    },
+    threat_intelligence: providers,
+    ai_analyst: { status: "not_implemented" },
+  },
+};

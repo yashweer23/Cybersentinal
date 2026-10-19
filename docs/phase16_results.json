@@ -1,0 +1,1463 @@
+{
+  "phase": 16,
+  "measured_on": "2026-10-17",
+  "status": "available_environment_checks_passed_native_gates_pending",
+  "environment": {
+    "database": "PGlite PostgreSQL 17.5 over TCP adapter; one backend",
+    "database_pool_size": 1,
+    "python": "3.12",
+    "node": "24.19.0",
+    "nginx": "1.30.0",
+    "chromium": "153.0.8010.0",
+    "playwright": "1.63.0",
+    "jmeter": "5.6.3",
+    "java": "17",
+    "os": "Linux container",
+    "native_docker_available": false,
+    "external_provider_calls": 0
+  },
+  "backend": {
+    "collected": 800,
+    "passed": 799,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 58.581,
+    "skip_reason": "Independent writer concurrency requires native PostgreSQL",
+    "warning": "Starlette TestClient httpx deprecation"
+  },
+  "frontend": {
+    "files": 7,
+    "passed": 86,
+    "failures": 0,
+    "seconds": 4.07,
+    "build": "passed",
+    "file_results": [
+      {
+        "name": "src/tests/ai.test.jsx",
+        "timestamp": "2026-10-17T02:03:11.117Z",
+        "hostname": null,
+        "tests": "10",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "0.950529386"
+      },
+      {
+        "name": "src/tests/analytics.test.jsx",
+        "timestamp": "2026-10-17T02:03:11.120Z",
+        "hostname": null,
+        "tests": "14",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "1.084841071"
+      },
+      {
+        "name": "src/tests/api.test.js",
+        "timestamp": "2026-10-17T02:03:11.124Z",
+        "hostname": null,
+        "tests": "9",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "0.020298423"
+      },
+      {
+        "name": "src/tests/dashboard.test.jsx",
+        "timestamp": "2026-10-17T02:03:11.125Z",
+        "hostname": null,
+        "tests": "23",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "2.006282567"
+      },
+      {
+        "name": "src/tests/investigation.test.jsx",
+        "timestamp": "2026-10-17T02:03:11.128Z",
+        "hostname": null,
+        "tests": "22",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "2.388632018"
+      },
+      {
+        "name": "src/tests/operations.test.jsx",
+        "timestamp": "2026-10-17T02:03:11.132Z",
+        "hostname": null,
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "0.221299134"
+      },
+      {
+        "name": "src/tests/route-security.test.jsx",
+        "timestamp": "2026-10-17T02:03:11.133Z",
+        "hostname": null,
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "0.207738118"
+      }
+    ]
+  },
+  "ruff": "passed",
+  "powershell": "New verifier syntax parsed in PowerShell 7.5.4; Windows execution pending",
+  "pipelines": {
+    "1000": {
+      "created_at": "2026-10-17T02:03:39.728235+00:00",
+      "count": 1000,
+      "seed": 42,
+      "scenario": "mixed",
+      "external_providers": "mock",
+      "db_pool_size": 1,
+      "database_version": "PostgreSQL 17.5 on aarch64-unknown-linux-gnu, compiled by emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.74 (1092ec30a3fb1d46b1782ff1b4db5094d3d06ae5), 32-bit",
+      "start_date": "2026-10-10",
+      "counts": {
+        "security_events": 1000,
+        "detection_findings": 6,
+        "risk_assessments": 6,
+        "incidents": 5,
+        "incident_findings": 5,
+        "incident_evidence": 17,
+        "incident_processing": 6
+      },
+      "idempotency": {
+        "passed": true,
+        "replay_duplicates": 6,
+        "raw_events_unchanged": true
+      },
+      "integrity": {
+        "finding_event_references": 0,
+        "incident_event_references": 0,
+        "incident_finding_references": 0,
+        "assessment_references": 0,
+        "duplicate_fingerprints": 0,
+        "duplicate_incident_links": 0,
+        "invalid_risk": 0
+      },
+      "unprocessed_events": 0,
+      "rule_counts": [
+        {
+          "rule_id": "CS-001",
+          "findings": 1
+        },
+        {
+          "rule_id": "CS-002",
+          "findings": 1
+        },
+        {
+          "rule_id": "CS-003",
+          "findings": 1
+        },
+        {
+          "rule_id": "CS-004",
+          "findings": 1
+        },
+        {
+          "rule_id": "CS-005",
+          "findings": 0
+        },
+        {
+          "rule_id": "CS-006",
+          "findings": 0
+        },
+        {
+          "rule_id": "CS-007",
+          "findings": 1
+        },
+        {
+          "rule_id": "CS-008",
+          "findings": 1
+        },
+        {
+          "rule_id": "CS-009",
+          "findings": 0
+        },
+        {
+          "rule_id": "CS-010",
+          "findings": 0
+        }
+      ],
+      "analytics": {
+        "scope": {
+          "start": "2026-10-10T00:00:00Z",
+          "end": "2026-10-17T02:03:43.290513Z",
+          "preset": null,
+          "as_of": "2026-10-17T02:03:43.290549Z",
+          "boundary": "[start,end)"
+        },
+        "definition": "Events use occurrence timestamps; findings use last_seen; incidents use created_at. Case state and scores are current at query time, not historical snapshots. All ranges are [start,end) UTC. MTTA: first audited human INVESTIGATING transition since creation. MTTR: current RESOLVED cases with valid resolved_at. Rates are percentages.",
+        "total_events": 1000,
+        "detection_findings": 6,
+        "incidents_created": 5,
+        "critical_incidents": 0,
+        "resolved_incidents": 1,
+        "false_positives": 0,
+        "average_risk_score": 56.2,
+        "median_risk_score": 53.0,
+        "unique_suspicious_ips": 7,
+        "unique_targeted_users": 13,
+        "acknowledged_incidents": 1,
+        "measured_resolutions": 1,
+        "mean_time_to_acknowledge_seconds": 1.01,
+        "mean_time_to_resolve_seconds": 1.26,
+        "p90_resolution_seconds": 1.26,
+        "resolution_rate": 20.0,
+        "false_positive_rate": 0.0
+      },
+      "evaluation": {
+        "scope": {
+          "start": "2026-10-10T00:00:00Z",
+          "end": "2026-10-17T02:03:43.290513Z",
+          "preset": null,
+          "as_of": "2026-10-17T02:03:43.319796Z",
+          "boundary": "[start,end)"
+        },
+        "definition": "Generator-labelled evidence only. Expected units are distinct (rule, scenario_id) with events in range; findings must have last_seen in range and retained synthetic evidence in range. Recall measures covered expected units. Boundary truncation and overlapping behavior limit interpretation. Not real-world accuracy.",
+        "label": "Synthetic Evaluation Only",
+        "expected_scenarios": 6,
+        "detected_scenarios": 6,
+        "missed_scenarios": 0,
+        "unexpected_findings": 0,
+        "findings_evaluated": 6,
+        "scenario_recall": 1.0,
+        "finding_label_agreement": 1.0,
+        "precision": null,
+        "precision_note": "Label agreement is not precision: overlapping behavior and retained evidence cannot establish false positives."
+      },
+      "event_query_plan": [
+        {
+          "Plan": {
+            "Node Type": "Aggregate",
+            "Strategy": "Hashed",
+            "Partial Mode": "Simple",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 337.47,
+            "Total Cost": 339.16,
+            "Plan Rows": 169,
+            "Plan Width": 154,
+            "Actual Startup Time": 1.886,
+            "Actual Total Time": 1.895,
+            "Actual Rows": 13,
+            "Actual Loops": 1,
+            "Group Key": [
+              "event_type"
+            ],
+            "Planned Partitions": 0,
+            "HashAgg Batches": 1,
+            "Peak Memory Usage": 24,
+            "Disk Usage": 0,
+            "Shared Hit Blocks": 259,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "security_events",
+                "Alias": "security_events",
+                "Startup Cost": 14.65,
+                "Total Cost": 335.94,
+                "Plan Rows": 307,
+                "Plan Width": 146,
+                "Actual Startup Time": 0.224,
+                "Actual Total Time": 1.229,
+                "Actual Rows": 1000,
+                "Actual Loops": 1,
+                "Recheck Cond": "(\"timestamp\" >= '2026-10-10 00:00:00+00'::timestamp with time zone)",
+                "Rows Removed by Index Recheck": 0,
+                "Exact Heap Blocks": 251,
+                "Lossy Heap Blocks": 0,
+                "Shared Hit Blocks": 259,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "ix_security_events_timestamp",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 14.58,
+                    "Plan Rows": 307,
+                    "Plan Width": 0,
+                    "Actual Startup Time": 0.162,
+                    "Actual Total Time": 0.162,
+                    "Actual Rows": 2332,
+                    "Actual Loops": 1,
+                    "Index Cond": "(\"timestamp\" >= '2026-10-10 00:00:00+00'::timestamp with time zone)",
+                    "Shared Hit Blocks": 8,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 0,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.275,
+          "Triggers": [],
+          "Execution Time": 1.979
+        }
+      ],
+      "clean_and_populated_migrations": "passed",
+      "http": {
+        "latencies": {
+          "/api/dashboard/overview?range=7d": {
+            "samples": 20,
+            "mean_ms": 9.84,
+            "median_ms": 9.603,
+            "p95_ms": 11.708,
+            "min_ms": 8.91,
+            "max_ms": 11.828,
+            "response_bytes": 428
+          },
+          "/api/dashboard/events/recent?range=7d": {
+            "samples": 20,
+            "mean_ms": 9.526,
+            "median_ms": 9.064,
+            "p95_ms": 12.887,
+            "min_ms": 7.475,
+            "max_ms": 15.002,
+            "response_bytes": 6803
+          },
+          "/api/dashboard/events/updates?after_id=0&limit=20": {
+            "samples": 20,
+            "mean_ms": 8.733,
+            "median_ms": 8.526,
+            "p95_ms": 10.117,
+            "min_ms": 7.033,
+            "max_ms": 10.583,
+            "response_bytes": 6720
+          },
+          "/api/incidents?limit=20": {
+            "samples": 20,
+            "mean_ms": 7.648,
+            "median_ms": 7.549,
+            "p95_ms": 9.163,
+            "min_ms": 6.712,
+            "max_ms": 9.211,
+            "response_bytes": 4739
+          },
+          "/api/detections?limit=20": {
+            "samples": 20,
+            "mean_ms": 7.207,
+            "median_ms": 6.979,
+            "p95_ms": 9.151,
+            "min_ms": 5.796,
+            "max_ms": 9.358,
+            "response_bytes": 14361
+          },
+          "/api/analytics/overview?range=7d": {
+            "samples": 20,
+            "mean_ms": 23.509,
+            "median_ms": 23.307,
+            "p95_ms": 27.767,
+            "min_ms": 20.227,
+            "max_ms": 28.355,
+            "response_bytes": 953
+          },
+          "/api/analytics/events/trend?range=7d": {
+            "samples": 20,
+            "mean_ms": 6.958,
+            "median_ms": 6.525,
+            "p95_ms": 8.577,
+            "min_ms": 5.199,
+            "max_ms": 9.132,
+            "response_bytes": 1475
+          },
+          "/api/analytics/detections/rules?range=7d": {
+            "samples": 20,
+            "mean_ms": 11.198,
+            "median_ms": 10.852,
+            "p95_ms": 13.338,
+            "min_ms": 9.219,
+            "max_ms": 15.444,
+            "response_bytes": 2954
+          },
+          "/api/reports/incidents?format=csv&range=7d&limit=100": {
+            "samples": 20,
+            "mean_ms": 8.044,
+            "median_ms": 7.85,
+            "p95_ms": 11.056,
+            "min_ms": 6.055,
+            "max_ms": 11.21,
+            "response_bytes": 1297
+          },
+          "/api/reports/security-summary?range=7d": {
+            "samples": 20,
+            "mean_ms": 57.347,
+            "median_ms": 48.742,
+            "p95_ms": 61.547,
+            "min_ms": 44.54,
+            "max_ms": 199.079,
+            "response_bytes": 30729
+          },
+          "/api/incidents/{incident_id}": {
+            "samples": 20,
+            "mean_ms": 25.429,
+            "median_ms": 25.438,
+            "p95_ms": 27.17,
+            "min_ms": 23.244,
+            "max_ms": 30.928,
+            "response_bytes": 13081
+          }
+        },
+        "openapi_operations": 88,
+        "anonymous_denied": true
+      },
+      "status": "passed",
+      "steps": {
+        "generate": {
+          "wall_ms": 104.416,
+          "summary": {}
+        },
+        "ingest": {
+          "wall_ms": 496.522,
+          "events_per_second": 2014.01,
+          "summary": {
+            "received": 1000,
+            "inserted": 1000,
+            "duplicates": 0,
+            "invalid": 0,
+            "failed": 0,
+            "errors_omitted": 0,
+            "duration_ms": 496.508,
+            "complete": true,
+            "valid": 1000
+          }
+        },
+        "detect": {
+          "wall_ms": 364.888,
+          "events_per_second": 2740.57,
+          "summary": {
+            "events_evaluated": 1000,
+            "events_processed": 1000,
+            "findings_matched": 6,
+            "findings_created": 6,
+            "duplicate_findings": 0,
+            "rules_executed": 10,
+            "batches": 2,
+            "duration_ms": 364.462,
+            "unprocessed_events": 0,
+            "complete": true,
+            "dry_run": false,
+            "replay": false
+          }
+        },
+        "risk": {
+          "wall_ms": 143.448,
+          "summary": {
+            "findings_evaluated": 6,
+            "assessments_created": 6,
+            "assessments_updated": 0,
+            "unchanged_assessments": 0,
+            "already_scored": 0,
+            "invalid_findings": 0,
+            "batches": 1,
+            "duration_ms": 143.268,
+            "average_score": 54.0,
+            "complete": true,
+            "remaining_unscored": 0,
+            "dry_run": false,
+            "rescore": false
+          }
+        },
+        "incidents": {
+          "wall_ms": 134.589,
+          "summary": {
+            "findings_evaluated": 6,
+            "eligible_findings": 5,
+            "incidents_created": 5,
+            "incidents_updated": 0,
+            "findings_attached": 5,
+            "correlated_findings": 0,
+            "findings_skipped": 1,
+            "invalid_findings": 0,
+            "projected_incidents_created": 0,
+            "projected_findings_attached": 0,
+            "batches": 1,
+            "complete": true,
+            "dry_run": false,
+            "remaining": 0,
+            "duration_ms": 134.428
+          }
+        },
+        "ingest_repeat": {
+          "wall_ms": 427.904,
+          "summary": {
+            "received": 1000,
+            "inserted": 0,
+            "duplicates": 1000,
+            "invalid": 0,
+            "failed": 0,
+            "errors_omitted": 0,
+            "duration_ms": 427.888,
+            "complete": true,
+            "valid": 1000
+          }
+        },
+        "detect_replay": {
+          "wall_ms": 301.859,
+          "summary": {
+            "events_evaluated": 1000,
+            "events_processed": 0,
+            "findings_matched": 6,
+            "findings_created": 0,
+            "duplicate_findings": 6,
+            "rules_executed": 10,
+            "batches": 2,
+            "duration_ms": 301.602,
+            "unprocessed_events": 0,
+            "complete": true,
+            "dry_run": false,
+            "replay": true
+          }
+        },
+        "intelligence_0": {
+          "wall_ms": 71.904,
+          "summary": {
+            "simulation": true,
+            "incidents_evaluated": 5,
+            "unique_indicators": 8,
+            "indicators_evaluated": 8,
+            "cache_hits": 0,
+            "external_lookups": 0,
+            "provider_requests": 0,
+            "provider_evaluations": 8,
+            "failed_lookups": 0,
+            "unknown_lookups": 4,
+            "incidents_enriched": 4,
+            "duration_ms": 67.186,
+            "complete": true
+          }
+        },
+        "ai_fallback": {
+          "wall_ms": 228.767,
+          "summary": {
+            "analysis_mode": "FALLBACK",
+            "provider": "deterministic",
+            "is_current": true,
+            "stale": false,
+            "cached": false,
+            "fallback_reason": null,
+            "context_build_ms": 166.506,
+            "provider_duration_ms": 0.0,
+            "duration_ms": 228.689
+          }
+        }
+      }
+    },
+    "10000": {
+      "created_at": "2026-10-17T02:05:18.986297+00:00",
+      "count": 10000,
+      "seed": 42,
+      "scenario": "mixed",
+      "external_providers": "mock",
+      "db_pool_size": 1,
+      "database_version": "PostgreSQL 17.5 on aarch64-unknown-linux-gnu, compiled by emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.74 (1092ec30a3fb1d46b1782ff1b4db5094d3d06ae5), 32-bit",
+      "start_date": "2026-10-10",
+      "counts": {
+        "security_events": 10000,
+        "detection_findings": 36,
+        "risk_assessments": 36,
+        "incidents": 29,
+        "incident_findings": 29,
+        "incident_evidence": 160,
+        "incident_processing": 36
+      },
+      "idempotency": {
+        "passed": true,
+        "replay_duplicates": 36,
+        "raw_events_unchanged": true
+      },
+      "integrity": {
+        "finding_event_references": 0,
+        "incident_event_references": 0,
+        "incident_finding_references": 0,
+        "assessment_references": 0,
+        "duplicate_fingerprints": 0,
+        "duplicate_incident_links": 0,
+        "invalid_risk": 0
+      },
+      "unprocessed_events": 0,
+      "rule_counts": [
+        {
+          "rule_id": "CS-001",
+          "findings": 5
+        },
+        {
+          "rule_id": "CS-002",
+          "findings": 2
+        },
+        {
+          "rule_id": "CS-003",
+          "findings": 4
+        },
+        {
+          "rule_id": "CS-004",
+          "findings": 3
+        },
+        {
+          "rule_id": "CS-005",
+          "findings": 3
+        },
+        {
+          "rule_id": "CS-006",
+          "findings": 3
+        },
+        {
+          "rule_id": "CS-007",
+          "findings": 7
+        },
+        {
+          "rule_id": "CS-008",
+          "findings": 5
+        },
+        {
+          "rule_id": "CS-009",
+          "findings": 4
+        },
+        {
+          "rule_id": "CS-010",
+          "findings": 0
+        }
+      ],
+      "analytics": {
+        "scope": {
+          "start": "2026-10-10T00:00:00Z",
+          "end": "2026-10-17T02:05:56.817183Z",
+          "preset": null,
+          "as_of": "2026-10-17T02:05:56.817222Z",
+          "boundary": "[start,end)"
+        },
+        "definition": "Events use occurrence timestamps; findings use last_seen; incidents use created_at. Case state and scores are current at query time, not historical snapshots. All ranges are [start,end) UTC. MTTA: first audited human INVESTIGATING transition since creation. MTTR: current RESOLVED cases with valid resolved_at. Rates are percentages.",
+        "total_events": 10000,
+        "detection_findings": 36,
+        "incidents_created": 29,
+        "critical_incidents": 0,
+        "resolved_incidents": 1,
+        "false_positives": 0,
+        "average_risk_score": 57.72,
+        "median_risk_score": 55.0,
+        "unique_suspicious_ips": 37,
+        "unique_targeted_users": 39,
+        "acknowledged_incidents": 1,
+        "measured_resolutions": 1,
+        "mean_time_to_acknowledge_seconds": 15.96,
+        "mean_time_to_resolve_seconds": 16.11,
+        "p90_resolution_seconds": 16.11,
+        "resolution_rate": 3.45,
+        "false_positive_rate": 0.0
+      },
+      "evaluation": {
+        "scope": {
+          "start": "2026-10-10T00:00:00Z",
+          "end": "2026-10-17T02:05:56.817183Z",
+          "preset": null,
+          "as_of": "2026-10-17T02:05:56.858917Z",
+          "boundary": "[start,end)"
+        },
+        "definition": "Generator-labelled evidence only. Expected units are distinct (rule, scenario_id) with events in range; findings must have last_seen in range and retained synthetic evidence in range. Recall measures covered expected units. Boundary truncation and overlapping behavior limit interpretation. Not real-world accuracy.",
+        "label": "Synthetic Evaluation Only",
+        "expected_scenarios": 37,
+        "detected_scenarios": 36,
+        "missed_scenarios": 1,
+        "unexpected_findings": 0,
+        "findings_evaluated": 36,
+        "scenario_recall": 0.972972972972973,
+        "finding_label_agreement": 1.0,
+        "precision": null,
+        "precision_note": "Label agreement is not precision: overlapping behavior and retained evidence cannot establish false positives."
+      },
+      "event_query_plan": [
+        {
+          "Plan": {
+            "Node Type": "Aggregate",
+            "Strategy": "Hashed",
+            "Partial Mode": "Simple",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 3208.56,
+            "Total Cost": 3210.56,
+            "Plan Rows": 200,
+            "Plan Width": 154,
+            "Actual Startup Time": 15.138,
+            "Actual Total Time": 15.145,
+            "Actual Rows": 15,
+            "Actual Loops": 1,
+            "Group Key": [
+              "event_type"
+            ],
+            "Planned Partitions": 0,
+            "HashAgg Batches": 1,
+            "Peak Memory Usage": 24,
+            "Disk Usage": 0,
+            "Shared Hit Blocks": 2510,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "security_events",
+                "Alias": "security_events",
+                "Startup Cost": 103.18,
+                "Total Cost": 3193.79,
+                "Plan Rows": 2954,
+                "Plan Width": 146,
+                "Actual Startup Time": 1.56,
+                "Actual Total Time": 8.391,
+                "Actual Rows": 10000,
+                "Actual Loops": 1,
+                "Recheck Cond": "(\"timestamp\" >= '2026-10-10 00:00:00+00'::timestamp with time zone)",
+                "Rows Removed by Index Recheck": 0,
+                "Exact Heap Blocks": 2453,
+                "Lossy Heap Blocks": 0,
+                "Shared Hit Blocks": 2510,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "ix_security_events_timestamp",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 102.44,
+                    "Plan Rows": 2954,
+                    "Plan Width": 0,
+                    "Actual Startup Time": 1.171,
+                    "Actual Total Time": 1.172,
+                    "Actual Rows": 23357,
+                    "Actual Loops": 1,
+                    "Index Cond": "(\"timestamp\" >= '2026-10-10 00:00:00+00'::timestamp with time zone)",
+                    "Shared Hit Blocks": 57,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 0,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.366,
+          "Triggers": [],
+          "Execution Time": 15.314
+        }
+      ],
+      "clean_and_populated_migrations": "passed",
+      "http": {
+        "latencies": {
+          "/api/dashboard/overview?range=7d": {
+            "samples": 20,
+            "mean_ms": 21.329,
+            "median_ms": 21.081,
+            "p95_ms": 24.744,
+            "min_ms": 18.51,
+            "max_ms": 28.162,
+            "response_bytes": 436
+          },
+          "/api/dashboard/events/recent?range=7d": {
+            "samples": 20,
+            "mean_ms": 9.484,
+            "median_ms": 6.961,
+            "p95_ms": 16.216,
+            "min_ms": 5.988,
+            "max_ms": 31.882,
+            "response_bytes": 6748
+          },
+          "/api/dashboard/events/updates?after_id=0&limit=20": {
+            "samples": 20,
+            "mean_ms": 6.55,
+            "median_ms": 6.287,
+            "p95_ms": 8.022,
+            "min_ms": 5.778,
+            "max_ms": 8.182,
+            "response_bytes": 6725
+          },
+          "/api/incidents?limit=20": {
+            "samples": 20,
+            "mean_ms": 8.078,
+            "median_ms": 7.97,
+            "p95_ms": 9.087,
+            "min_ms": 6.992,
+            "max_ms": 9.452,
+            "response_bytes": 18078
+          },
+          "/api/detections?limit=20": {
+            "samples": 20,
+            "mean_ms": 9.323,
+            "median_ms": 9.029,
+            "p95_ms": 11.214,
+            "min_ms": 8.15,
+            "max_ms": 11.691,
+            "response_bytes": 50104
+          },
+          "/api/analytics/overview?range=7d": {
+            "samples": 20,
+            "mean_ms": 36.636,
+            "median_ms": 36.583,
+            "p95_ms": 40.302,
+            "min_ms": 32.202,
+            "max_ms": 42.152,
+            "response_bytes": 961
+          },
+          "/api/analytics/events/trend?range=7d": {
+            "samples": 20,
+            "mean_ms": 18.284,
+            "median_ms": 17.741,
+            "p95_ms": 21.53,
+            "min_ms": 16.64,
+            "max_ms": 22.102,
+            "response_bytes": 1504
+          },
+          "/api/analytics/detections/rules?range=7d": {
+            "samples": 20,
+            "mean_ms": 9.215,
+            "median_ms": 8.883,
+            "p95_ms": 11.05,
+            "min_ms": 7.809,
+            "max_ms": 12.078,
+            "response_bytes": 3016
+          },
+          "/api/reports/incidents?format=csv&range=7d&limit=100": {
+            "samples": 20,
+            "mean_ms": 5.567,
+            "median_ms": 5.54,
+            "p95_ms": 6.015,
+            "min_ms": 5.078,
+            "max_ms": 6.103,
+            "response_bytes": 6825
+          },
+          "/api/reports/security-summary?range=7d": {
+            "samples": 20,
+            "mean_ms": 70.577,
+            "median_ms": 69.62,
+            "p95_ms": 75.301,
+            "min_ms": 66.651,
+            "max_ms": 78.924,
+            "response_bytes": 30949
+          },
+          "/api/incidents/{incident_id}": {
+            "samples": 20,
+            "mean_ms": 24.218,
+            "median_ms": 23.252,
+            "p95_ms": 30.029,
+            "min_ms": 20.461,
+            "max_ms": 33.324,
+            "response_bytes": 9182
+          }
+        },
+        "openapi_operations": 88,
+        "anonymous_denied": true
+      },
+      "status": "passed",
+      "steps": {
+        "generate": {
+          "wall_ms": 1054.241,
+          "summary": {}
+        },
+        "ingest": {
+          "wall_ms": 5500.269,
+          "events_per_second": 1818.09,
+          "summary": {
+            "received": 10000,
+            "inserted": 10000,
+            "duplicates": 0,
+            "invalid": 0,
+            "failed": 0,
+            "errors_omitted": 0,
+            "duration_ms": 5500.255,
+            "complete": true,
+            "valid": 10000
+          }
+        },
+        "detect": {
+          "wall_ms": 13663.183,
+          "events_per_second": 731.89,
+          "summary": {
+            "events_evaluated": 10000,
+            "events_processed": 10000,
+            "findings_matched": 36,
+            "findings_created": 36,
+            "duplicate_findings": 0,
+            "rules_executed": 10,
+            "batches": 20,
+            "duration_ms": 13656.95,
+            "unprocessed_events": 0,
+            "complete": true,
+            "dry_run": false,
+            "replay": false
+          }
+        },
+        "risk": {
+          "wall_ms": 93.118,
+          "summary": {
+            "findings_evaluated": 36,
+            "assessments_created": 36,
+            "assessments_updated": 0,
+            "unchanged_assessments": 0,
+            "already_scored": 0,
+            "invalid_findings": 0,
+            "batches": 1,
+            "duration_ms": 92.53,
+            "average_score": 54.86,
+            "complete": true,
+            "remaining_unscored": 0,
+            "dry_run": false,
+            "rescore": false
+          }
+        },
+        "incidents": {
+          "wall_ms": 519.477,
+          "summary": {
+            "findings_evaluated": 36,
+            "eligible_findings": 29,
+            "incidents_created": 29,
+            "incidents_updated": 0,
+            "findings_attached": 29,
+            "correlated_findings": 0,
+            "findings_skipped": 7,
+            "invalid_findings": 0,
+            "projected_incidents_created": 0,
+            "projected_findings_attached": 0,
+            "batches": 1,
+            "complete": true,
+            "dry_run": false,
+            "remaining": 0,
+            "duration_ms": 519.229
+          }
+        },
+        "ingest_repeat": {
+          "wall_ms": 5515.367,
+          "summary": {
+            "received": 10000,
+            "inserted": 0,
+            "duplicates": 10000,
+            "invalid": 0,
+            "failed": 0,
+            "errors_omitted": 0,
+            "duration_ms": 5515.354,
+            "complete": true,
+            "valid": 10000
+          }
+        },
+        "detect_replay": {
+          "wall_ms": 9326.304,
+          "summary": {
+            "events_evaluated": 10000,
+            "events_processed": 0,
+            "findings_matched": 36,
+            "findings_created": 0,
+            "duplicate_findings": 36,
+            "rules_executed": 10,
+            "batches": 20,
+            "duration_ms": 9320.405,
+            "unprocessed_events": 0,
+            "complete": true,
+            "dry_run": false,
+            "replay": true
+          }
+        },
+        "intelligence_0": {
+          "wall_ms": 281.401,
+          "summary": {
+            "simulation": true,
+            "incidents_evaluated": 29,
+            "unique_indicators": 34,
+            "indicators_evaluated": 34,
+            "cache_hits": 0,
+            "external_lookups": 0,
+            "provider_requests": 0,
+            "provider_evaluations": 34,
+            "failed_lookups": 0,
+            "unknown_lookups": 17,
+            "incidents_enriched": 19,
+            "duration_ms": 277.175,
+            "complete": true
+          }
+        },
+        "ai_fallback": {
+          "wall_ms": 131.826,
+          "summary": {
+            "analysis_mode": "FALLBACK",
+            "provider": "deterministic",
+            "is_current": true,
+            "stale": false,
+            "cached": false,
+            "fallback_reason": null,
+            "context_build_ms": 65.727,
+            "provider_duration_ms": 0.0,
+            "duration_ms": 131.747
+          }
+        }
+      }
+    }
+  },
+  "read_load": [
+    {
+      "users": 10,
+      "scheduled_seconds": 30,
+      "samples": 2027,
+      "errors": 0,
+      "endpoints": {
+        "Analytics overview": {
+          "samples": 225,
+          "mean_ms": 55.24,
+          "median_ms": 46.0,
+          "p95_ms": 104.0,
+          "min_ms": 31.0,
+          "max_ms": 282.0,
+          "errors": 0
+        },
+        "CSV report": {
+          "samples": 221,
+          "mean_ms": 28.638,
+          "median_ms": 24.0,
+          "p95_ms": 60.0,
+          "min_ms": 5.0,
+          "max_ms": 134.0,
+          "errors": 0
+        },
+        "Event polling": {
+          "samples": 227,
+          "mean_ms": 39.925,
+          "median_ms": 37.0,
+          "p95_ms": 79.0,
+          "min_ms": 6.0,
+          "max_ms": 257.0,
+          "errors": 0
+        },
+        "Event trend": {
+          "samples": 222,
+          "mean_ms": 28.955,
+          "median_ms": 21.0,
+          "p95_ms": 61.0,
+          "min_ms": 14.0,
+          "max_ms": 206.0,
+          "errors": 0
+        },
+        "Findings": {
+          "samples": 226,
+          "mean_ms": 36.951,
+          "median_ms": 32.0,
+          "p95_ms": 75.0,
+          "min_ms": 6.0,
+          "max_ms": 276.0,
+          "errors": 0
+        },
+        "Incidents": {
+          "samples": 227,
+          "mean_ms": 32.947,
+          "median_ms": 27.0,
+          "p95_ms": 74.0,
+          "min_ms": 7.0,
+          "max_ms": 185.0,
+          "errors": 0
+        },
+        "Overview": {
+          "samples": 229,
+          "mean_ms": 48.341,
+          "median_ms": 46.0,
+          "p95_ms": 82.0,
+          "min_ms": 17.0,
+          "max_ms": 273.0,
+          "errors": 0
+        },
+        "Recent events": {
+          "samples": 228,
+          "mean_ms": 21.316,
+          "median_ms": 14.0,
+          "p95_ms": 58.0,
+          "min_ms": 5.0,
+          "max_ms": 147.0,
+          "errors": 0
+        },
+        "Rule analytics": {
+          "samples": 222,
+          "mean_ms": 31.685,
+          "median_ms": 29.0,
+          "p95_ms": 62.0,
+          "min_ms": 8.0,
+          "max_ms": 206.0,
+          "errors": 0
+        }
+      },
+      "tool": "Apache JMeter 5.6.3",
+      "measured_seconds": 29.363,
+      "requests_per_second": 69.032,
+      "mean_ms": 36.035,
+      "median_ms": 32.0,
+      "p95_ms": 77.0,
+      "samples_file": "performance/phase16-load10.csv"
+    },
+    {
+      "users": 25,
+      "scheduled_seconds": 60,
+      "samples": 4956,
+      "errors": 0,
+      "endpoints": {
+        "Analytics overview": {
+          "samples": 547,
+          "mean_ms": 209.073,
+          "median_ms": 196.0,
+          "p95_ms": 359.0,
+          "min_ms": 29.0,
+          "max_ms": 431.0,
+          "errors": 0
+        },
+        "CSV report": {
+          "samples": 539,
+          "mean_ms": 190.297,
+          "median_ms": 176.0,
+          "p95_ms": 349.0,
+          "min_ms": 6.0,
+          "max_ms": 518.0,
+          "errors": 0
+        },
+        "Event polling": {
+          "samples": 559,
+          "mean_ms": 187.005,
+          "median_ms": 176.0,
+          "p95_ms": 329.0,
+          "min_ms": 5.0,
+          "max_ms": 439.0,
+          "errors": 0
+        },
+        "Event trend": {
+          "samples": 542,
+          "mean_ms": 186.159,
+          "median_ms": 176.0,
+          "p95_ms": 330.0,
+          "min_ms": 14.0,
+          "max_ms": 541.0,
+          "errors": 0
+        },
+        "Findings": {
+          "samples": 552,
+          "mean_ms": 188.397,
+          "median_ms": 180.5,
+          "p95_ms": 327.0,
+          "min_ms": 7.0,
+          "max_ms": 455.0,
+          "errors": 0
+        },
+        "Incidents": {
+          "samples": 556,
+          "mean_ms": 186.117,
+          "median_ms": 175.0,
+          "p95_ms": 326.0,
+          "min_ms": 7.0,
+          "max_ms": 642.0,
+          "errors": 0
+        },
+        "Overview": {
+          "samples": 561,
+          "mean_ms": 193.499,
+          "median_ms": 181.0,
+          "p95_ms": 343.0,
+          "min_ms": 17.0,
+          "max_ms": 590.0,
+          "errors": 0
+        },
+        "Recent events": {
+          "samples": 559,
+          "mean_ms": 181.766,
+          "median_ms": 172.0,
+          "p95_ms": 328.0,
+          "min_ms": 6.0,
+          "max_ms": 418.0,
+          "errors": 0
+        },
+        "Rule analytics": {
+          "samples": 541,
+          "mean_ms": 189.871,
+          "median_ms": 179.0,
+          "p95_ms": 341.0,
+          "min_ms": 8.0,
+          "max_ms": 450.0,
+          "errors": 0
+        }
+      },
+      "tool": "Apache JMeter 5.6.3",
+      "measured_seconds": 59.615,
+      "requests_per_second": 83.133,
+      "mean_ms": 190.219,
+      "median_ms": 179.0,
+      "p95_ms": 337.0,
+      "samples_file": "performance/phase16-load25.csv"
+    }
+  ],
+  "browser": {
+    "results": [
+      {
+        "role": "ADMIN",
+        "pages": [
+          "/",
+          "/incidents",
+          "/events",
+          "/threat-intelligence",
+          "/analytics",
+          "/ai-analyst",
+          "/rules",
+          "/health",
+          "/settings",
+          "incident investigation",
+          "/admin"
+        ],
+        "login": "passed",
+        "logout": "passed"
+      },
+      {
+        "role": "ANALYST",
+        "pages": [
+          "/",
+          "/incidents",
+          "/events",
+          "/threat-intelligence",
+          "/analytics",
+          "/ai-analyst",
+          "/rules",
+          "/health",
+          "/settings",
+          "incident investigation",
+          "/admin"
+        ],
+        "login": "passed",
+        "logout": "passed"
+      },
+      {
+        "role": "VIEWER",
+        "pages": [
+          "/",
+          "/incidents",
+          "/events",
+          "/threat-intelligence",
+          "/analytics",
+          "/ai-analyst",
+          "/rules",
+          "/health",
+          "/settings",
+          "incident investigation",
+          "/admin"
+        ],
+        "login": "passed",
+        "logout": "passed"
+      }
+    ],
+    "page_errors": [],
+    "csp_violations": [],
+    "unexpected_api_errors": []
+  },
+  "dependency_scan": {
+    "pip_audit_version": "2.10.1",
+    "python_packages_audited": 38,
+    "python_vulnerabilities": 0,
+    "npm": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 76,
+        "dev": 155,
+        "optional": 50,
+        "peer": 12,
+        "peerOptional": 0,
+        "total": 231
+      }
+    },
+    "fix": {
+      "package": "source-map-js",
+      "before": "1.2.1",
+      "after": "1.2.2",
+      "advisory": "https://github.com/advisories/GHSA-68fv-2mgg-jv7q"
+    }
+  },
+  "secret_scan": {
+    "tool": "detect-secrets 1.5.0",
+    "source_candidates": 16,
+    "review": "Candidates are scenario/event names, test-only passwords, deliberately invalid hashes/tokens and logging/schema canaries; no live credential identified. Git history unavailable.",
+    "files": {
+      "backend/app/repositories/synthetic_analytics.py": [
+        {
+          "type": "Secret Keyword",
+          "line_number": 13
+        }
+      ],
+      "backend/app/simulation/constants.py": [
+        {
+          "type": "Secret Keyword",
+          "line_number": 20
+        },
+        {
+          "type": "Secret Keyword",
+          "line_number": 33
+        }
+      ],
+      "backend/scripts/evaluate_detections.py": [
+        {
+          "type": "Secret Keyword",
+          "line_number": 21
+        }
+      ],
+      "backend/tests/conftest.py": [
+        {
+          "type": "Secret Keyword",
+          "line_number": 4
+        },
+        {
+          "type": "Secret Keyword",
+          "line_number": 6
+        }
+      ],
+      "backend/tests/test_auth_api.py": [
+        {
+          "type": "Secret Keyword",
+          "line_number": 25
+        },
+        {
+          "type": "Secret Keyword",
+          "line_number": 110
+        }
+      ],
+      "backend/tests/test_database.py": [
+        {
+          "type": "Secret Keyword",
+          "line_number": 155
+        }
+      ],
+      "backend/tests/test_event_ingestion.py": [
+        {
+          "type": "Secret Keyword",
+          "line_number": 52
+        },
+        {
+          "type": "Secret Keyword",
+          "line_number": 239
+        }
+      ],
+      "backend/tests/test_operations.py": [
+        {
+          "type": "Secret Keyword",
+          "line_number": 35
+        },
+        {
+          "type": "Secret Keyword",
+          "line_number": 67
+        },
+        {
+          "type": "Secret Keyword",
+          "line_number": 233
+        }
+      ],
+      "backend/tests/test_schemas.py": [
+        {
+          "type": "Secret Keyword",
+          "line_number": 66
+        }
+      ],
+      "backend/tests/test_seeds_and_cache.py": [
+        {
+          "type": "Secret Keyword",
+          "line_number": 54
+        }
+      ]
+    }
+  },
+  "outstanding_gates": [
+    "Native PostgreSQL independent-writer concurrency",
+    "Docker Desktop image build and container health/restart/outage recovery",
+    "Native PostgreSQL archive restore and restored-record verification",
+    "Windows PowerShell 5.1 execution",
+    "Live external provider validation is intentionally excluded; mocked contracts and fallbacks only"
+  ],
+  "limitations": [
+    "Embedded single-backend load does not establish native PostgreSQL concurrency or deployment capacity.",
+    "Synthetic label agreement is not precision or real-world detection accuracy.",
+    "Browser acceptance covers navigation/access and existing populated pages; detailed mutation paths are covered by API/component tests.",
+    "Scans are snapshots for inspected source and resolved dependencies, not proof of absence of vulnerabilities."
+  ],
+  "compose_configuration": "Default and development parsed; no container execution"
+}
